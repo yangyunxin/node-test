@@ -1,0 +1,3 @@
+ 开发者可以根据自己使用的虚拟机软件选择下载相应的虚拟机镜像，其中包括 VMware、VirtualBox、Hyper-V 
+或Parallels。每个镜像都需要 17-20GB 可用空间解压。微软虽然花大力气推 Universal Windows 
+Platform，但至今并不怎么成功。

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定的实现</title>
+</head>
+<body>
+	<div>
+		<h3 sf-innertext="vm.message"></h3>
+		<!-- <h4 sf-text="tm.poss"></h4> -->
+		<input type="text" sf-value="vm.message">
+		<!-- <input type="text" sf-value="tm.poss"> -->
+	</div>
+	<script src="mvvm.js"></script>
+	<script type="text/javascript">
+	var sf = new SegmentFault();   //生成一个sf的实例
+	let vm = new ViewModel()
+	// let tm = new TiewModel()
+    sf.registerViewModel("vm", vm);  //注册一个viewModel，起一个叫vm的别名
+    // sf.registerViewModel("tm", tm);  //注册一个viewModel，起一个叫tm的别名
+    sf.init();  //调用init方法，开始初始化，sf正式开始一些列工作
+
+    //以下是viewModel的定义
+    function ViewModel() {
+        this.message = "hello, SegmentFault";
+        this.buttonClickHandler = function() {
+            this.message = "clicked: " + this.message;
+        }
+    }
+    function TiewModel() {
+        this.poss = "hello, egmentFault";
+        this.buttonClickHandler = function() {
+            this.poss = "clicked: " + this.poss;
+        }
+    }
+	</script>
+</body>
+</html>
